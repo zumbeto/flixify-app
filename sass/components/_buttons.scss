@@ -1,0 +1,27 @@
+@use "../abstracts" as a;
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-secondary);
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: var(--color-secondary);
+    color: #000;
+  }
+
+  &:disabled {
+    border-color: #ccc;
+    cursor: not-allowed;
+
+    &:hover {
+      background: transparent;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@use "../abstracts/" as a;
+
+.active {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.alert {
+  background: red;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.alert-success {
+  background: green;
+}
+
+.alert-error {
+  background: red;
+}
+
+.back {
+  margin-top: 3rem;
+}

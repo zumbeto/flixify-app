@@ -1,0 +1,28 @@
+@use "../abstracts" as a;
+
+.details-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem 0 3rem;
+
+  & img {
+    width: 400px;
+    height: 100%;
+    margin-right: 60px;
+    object-fit: cover;
+  }
+  & p {
+    margin: 20px 0;
+  }
+  & .btn {
+    margin-top: 20px;
+  }
+}
+
+.details-bottom li {
+  margin: 1.5rem 0;
+  padding-bottom: 0.8rem;
+  border-bottom: 0.1rem solid #fff;
+  border-color: rgba(255, 255, 255, 0.1);
+}

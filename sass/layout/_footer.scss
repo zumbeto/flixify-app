@@ -1,0 +1,25 @@
+@use "../abstracts" as a;
+
+.main-footer {
+  background: #020d18;
+  padding: 2rem 0;
+  margin-top: 2rem;
+
+  & .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__social-links {
+    display: flex;
+    & a {
+      margin-left: 1rem;
+      color: #fff;
+
+      &:hover {
+        color: var(--color-secondary);
+      }
+    }
+  }
+}

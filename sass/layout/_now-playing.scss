@@ -1,0 +1,12 @@
+@use "../abstracts" as a;
+
+.now-playing {
+  padding: 6rem;
+  background: url(../../dist/images/showcase-bg.jpg) no-repeat center
+    center/cover;
+
+  &__heading {
+    margin: 2rem 0;
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,21 @@
+@use "../abstracts" as a;
+
+.main-header {
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.8);
+
+  &__logo {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__nav {
+    display: flex;
+
+    & li {
+      margin-left: 2rem;
+    }
+  }
+}

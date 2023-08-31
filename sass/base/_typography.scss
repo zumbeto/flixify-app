@@ -1,0 +1,37 @@
+@use "../abstracts" as a;
+
+.main-header__nav__link {
+  font-size: 1.6rem;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--color-secondary);
+  }
+}
+
+section h2 {
+  margin: 2rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.popular-movies {
+  &__card {
+    &__body {
+      font-size: 2rem;
+    }
+  }
+}
+
+.main-footer {
+  &__logo {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__social-links {
+    font-size: 2rem;
+  }
+}
