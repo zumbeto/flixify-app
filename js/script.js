@@ -146,6 +146,64 @@ function displayBackgroundImg(type, path) {
   }
 }
 
+// Swiper Slider
+const displaySlider = async () => {
+  const { results: movies } = await fetchData('movie/now_playing');
+
+  movies.forEach(movie => {
+    const div = document.createElement('div');
+    const imgSrc = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    div.classList.add('swiper-slide');
+
+    div.innerHTML = `
+    <a href="movie-details.html?id=${movie.id}">
+      <img src="${imgSrc}" alt="${movie.title}" />
+    </a>
+    <h4 class="swiper-rating">
+      <i class="fas fa-star text-secondary"></i> ${movie.vote_average} / 10
+    </h4>
+    `;
+
+    document.querySelector('.swiper-wrapper').appendChild(div);
+  });
+  initSwiper();
+};
+
+// Initialize Swiper
+function initSwiper() {
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    freeMode: {
+      enabled: true,
+      sticky: true,
+      momentum: true,
+      momentumRatio: 0.5,
+    },
+    loop: true,
+    grabCursor: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+      1920: {
+        slidesPerView: 5,
+      },
+    },
+  });
+}
+
 // Fetch data from API
 const fetchData = async endpoint => {
   const API_KEY = 'e7607410b1bd82e37d467bc556d312c3';
@@ -185,6 +243,7 @@ const router = () => {
     case '/':
     case '/index.html':
       displayTrendingMovies();
+      displaySlider();
       break;
     case '/shows.html':
       displayTrendingShows();
