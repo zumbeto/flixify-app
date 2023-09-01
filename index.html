@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="lib/swiper.css" />
     <link rel="stylesheet" href="lib/fontawesome.css" />
     <link rel="stylesheet" href="dist/css/style.css" />
@@ -24,7 +21,7 @@
         <nav>
           <ul class="main-header__nav">
             <li>
-              <a class="main-header__nav__link" href="/">Movies</a>
+              <a class="main-header__nav__link" href="/index.html">Movies</a>
             </li>
             <li>
               <a class="main-header__nav__link" href="/shows.html">TV Shows</a>
@@ -64,12 +61,7 @@
             <label for="shows">TV Shows</label>
           </div>
           <div class="search__form__flex">
-            <input
-              type="text"
-              name="search-term"
-              id="search-term"
-              placeholder="Enter search term"
-            />
+            <input type="text" name="search-term" id="search-term" placeholder="Enter search term" />
             <button class="btn" type="submit">
               <i class="fas fa-search"></i>
             </button>
@@ -78,132 +70,10 @@
       </div>
     </section>
 
-    <!-- Popular Movies -->
-    <section class="popular-movies container">
-      <h2>Popular Movies</h2>
-      <div id="popular-movies" class="grid">
-        <div class="card">
-          <a href="movie-details.html?id=1">
-            <img
-              src="dist/images/no-image.jpg"
-              class="card__img-top"
-              alt="Movie Title"
-            />
-          </a>
-          <div class="card__body">
-            <h5 class="card__body__title">Movie Title</h5>
-            <p class="card__body__text">
-              <small class="text-muted">Release: XX/XX/XXXX</small>
-              >
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="movie-details.html?id=1">
-            <img
-              src="dist/images/no-image.jpg"
-              class="card__img-top"
-              alt="Movie Title"
-            />
-          </a>
-          <div class="card__body">
-            <h5 class="card__body__title">Movie Title</h5>
-            <p class="card__body__text">
-              <small class="text-muted">Release: XX/XX/XXXX</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="movie-details.html?id=1">
-            <img
-              src="dist/images/no-image.jpg"
-              class="card__img-top"
-              alt="Movie Title"
-            />
-          </a>
-          <div class="card__body">
-            <h5 class="card__body__title">Movie Title</h5>
-            <p class="card__body__text">
-              <small class="text-muted">Release: XX/XX/XXXX</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="movie-details.html?id=1">
-            <img
-              src="dist/images/no-image.jpg"
-              class="card__img-top"
-              alt="Movie Title"
-            />
-          </a>
-          <div class="card__body">
-            <h5 class="card__body__title">Movie Title</h5>
-            <p class="card__body__text">
-              <small class="text-muted">Release: XX/XX/XXXX</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="movie-details.html?id=1">
-            <img
-              src="dist/images/no-image.jpg"
-              class="card__img-top"
-              alt="Movie Title"
-            />
-          </a>
-          <div class="card__body">
-            <h5 class="card__body__title">Movie Title</h5>
-            <p class="card__body__text">
-              <small class="text-muted">Release: XX/XX/XXXX</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="movie-details.html?id=1">
-            <img
-              src="dist/images/no-image.jpg"
-              class="card__img-top"
-              alt="Movie Title"
-            />
-          </a>
-          <div class="card__body">
-            <h5 class="card__body__title">Movie Title</h5>
-            <p class="card__body__text">
-              <small class="text-muted">Release: XX/XX/XXXX</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="movie-details.html?id=1">
-            <img
-              src="dist/images/no-image.jpg"
-              class="card__img-top"
-              alt="Movie Title"
-            />
-          </a>
-          <div class="card__body">
-            <h5 class="card__body__title">Movie Title</h5>
-            <p class="card__body__text">
-              <small class="text-muted">Release: XX/XX/XXXX</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="movie-details.html?id=1">
-            <img
-              src="dist/images/no-image.jpg"
-              class="card__img-top"
-              alt="Movie Title"
-            />
-          </a>
-          <div class="card__body">
-            <h5 class="card__body__title">Movie Title</h5>
-            <p class="card__body__text">
-              <small class="text-muted">Release: XX/XX/XXXX</small>
-            </p>
-          </div>
-        </div>
-      </div>
+    <!-- Trending Movies -->
+    <section class="trending-movies container">
+      <h2>Trending Movies</h2>
+      <div id="trending-movies" class="grid"></div>
     </section>
 
     <!-- Footer -->
@@ -211,15 +81,9 @@
       <div class="container">
         <div class="main-footer__logo"><span>FLIXIFY</span></div>
         <div class="main-footer__social-links">
-          <a href="https://www.facebook.com" target="_blank"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="https://www.twitter.com" target="_blank"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href="https://www.instagram.com" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </footer>

@@ -1,4 +1,4 @@
-@use "../abstracts" as a;
+@use '../abstracts' as a;
 
 .main-header__nav__link {
   font-size: 1.6rem;
@@ -15,8 +15,8 @@ section h2 {
   text-transform: uppercase;
 }
 
-.popular-movies {
-  &__card {
+.trending-movies {
+  & .card {
     &__body {
       font-size: 2rem;
     }
