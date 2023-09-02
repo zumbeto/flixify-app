@@ -1,11 +1,19 @@
 @use '../abstracts' as a;
 
 .now-playing {
-  padding: 6rem;
+  padding: 6rem 8rem 8rem 8rem;
   background: url(../../assets/images/showcase-bg.jpg) no-repeat center center/cover;
 
   &__heading {
     margin: 2rem 0;
     font-size: 3rem;
+
+    @include a.breakpoint(md) {
+      margin: 4rem 0;
+    }
+
+    @include a.breakpoint(xl) {
+      margin: 2rem 0;
+    }
   }
 }

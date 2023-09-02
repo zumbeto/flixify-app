@@ -1,9 +1,10 @@
-// 392px, 678px, 992px, 1152px
+// 392px, 678px, 992px, 1152px, 1520px
 $breakpoints: (
   xsm: 24.5em,
   sm: 42.375em,
   md: 62em,
   lg: 72em,
+  xl: 95em,
 );
 
 // Mixin for media queries
