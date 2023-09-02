@@ -24,7 +24,9 @@ const prodConfig = {
     path: path.resolve(__dirname, 'dist/js'),
   },
   mode: 'production',
-  plugins: [new Dotenv()],
+  plugins: new webpack.DefinePlugin({
+    'process.env.TMDB_API_KEY': JSON.stringify(process.env.TMDB_API_KEY),
+  }),
   optimization: {
     minimizer: [new TerserPlugin()],
   },
