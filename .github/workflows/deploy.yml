@@ -1,4 +1,4 @@
-name: Deploy to gh-pages branch
+name: Deploy to deployment branch
 
 on:
   push:
@@ -27,8 +27,6 @@ jobs:
 
       - name: Build the project
         run: npm run build
-        env:
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
 
       - name: Prepare files for deployment
         run: |
@@ -39,11 +37,10 @@ jobs:
           cp *.html deployment_dir/
           cp README.md deployment_dir/
           cp LICENSE.md deployment_dir/
-          touch deployment_dir/.nojekyll
 
-      - name: Deploy to gh-pages branch
+      - name: Deploy to deployment branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./deployment_dir
-          publish_branch: gh-pages
+          publish_branch: deployment
           github_token: ${{ secrets.FLIXIFY_TOKEN }}
