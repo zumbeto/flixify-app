@@ -43,7 +43,7 @@ npm start
 
 ## Live Version
 
-The live version of the website can be accessed on Netlify: [Flixify App on Netlify](https://rainbow-hamster-885697.netlify.app/)
+The live version of the website can be accessed on Netlify: [Flixify App on Netlify](https://flixify-app.netlify.app/)
 
 ## Contributing
 
