@@ -11,10 +11,7 @@ const devConfig = {
   },
   mode: 'development',
   plugins: [
-    new Dotenv(),
-    new webpack.DefinePlugin({
-      'process.env.TMDB_API_KEY': JSON.stringify(process.env.TMDB_API_KEY),
-    }),
+    new Dotenv(), // Use Dotenv for development builds
   ],
   resolve: {
     fallback: {
@@ -32,7 +29,7 @@ const prodConfig = {
   mode: 'production',
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.TMDB_API_KEY': JSON.stringify(process.env.TMDB_API_KEY),
+      'process.env.TMDB_API_KEY': JSON.stringify(process.env.TMDB_API_KEY), // Only use DefinePlugin for production builds
     }),
   ],
   optimization: {

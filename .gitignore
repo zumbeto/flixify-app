@@ -3,3 +3,4 @@ node_modules
 .prettierrc
 sass
 .env
+dist

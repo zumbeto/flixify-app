@@ -34,11 +34,14 @@ jobs:
           cp -r dist deployment_dir/
           cp -r lib deployment_dir/
           cp -r webfonts deployment_dir/
+          cp -r js deployment_dir/
+          cp -r sass deployment_dir/
           cp *.html deployment_dir/
           cp README.md deployment_dir/
           cp LICENSE.md deployment_dir/
           cp package.json deployment_dir/
           cp package-lock.json deployment_dir/
+          cp webpack.config.js deployment_dir/
 
       - name: Deploy to deployment branch
         uses: peaceiris/actions-gh-pages@v3
