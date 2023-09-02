@@ -37,6 +37,8 @@ jobs:
           cp *.html deployment_dir/
           cp README.md deployment_dir/
           cp LICENSE.md deployment_dir/
+          cp package.json deployment_dir/
+          cp package-lock.json deployment_dir/
 
       - name: Deploy to deployment branch
         uses: peaceiris/actions-gh-pages@v3
