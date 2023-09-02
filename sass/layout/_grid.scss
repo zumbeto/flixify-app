@@ -1,13 +1,13 @@
-@use "../abstracts/" as a;
+@use '../abstracts/' as a;
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 2rem;
+  grid-gap: 4rem;
 }
 
 .container {
-  max-width: 120rem;
+  max-width: 160rem;
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;

@@ -1,5 +1,11 @@
 @use '../abstracts' as a;
 
+#movie-details-page {
+  .container {
+    max-width: 120rem;
+  }
+}
+
 .details-top {
   display: flex;
   flex-direction: column;

@@ -1,5 +1,15 @@
 @use '../abstracts' as a;
 
+#main-page {
+  .container {
+    flex-direction: column;
+
+    @include a.breakpoint(xsm) {
+      flex-direction: row;
+    }
+  }
+}
+
 .main-header {
   padding: 2rem 0;
   background: rgba(0, 0, 0, 0.8);
@@ -13,6 +23,7 @@
 
   &__nav {
     display: flex;
+    gap: 1rem;
 
     & li {
       margin-left: 2rem;

@@ -1,4 +1,4 @@
-@use "../abstracts" as a;
+@use '../abstracts' as a;
 
 .main-footer {
   background: #020d18;
@@ -13,12 +13,15 @@
 
   &__social-links {
     display: flex;
+    gap: 1rem;
     & a {
       margin-left: 1rem;
       color: #fff;
+      transition: all 0.3s ease-in-out;
 
       &:hover {
         color: var(--color-secondary);
+        transform: scale(1.2);
       }
     }
   }
