@@ -39,6 +39,7 @@ jobs:
           cp *.html deployment_dir/
           cp README.md deployment_dir/
           cp LICENSE.md deployment_dir/
+          touch deployment_dir/.nojekyll
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
