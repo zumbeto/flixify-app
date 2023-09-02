@@ -31,7 +31,6 @@ const prodConfig = {
   },
   mode: 'production',
   plugins: [
-    new Dotenv(),
     new webpack.DefinePlugin({
       'process.env.TMDB_API_KEY': JSON.stringify(process.env.TMDB_API_KEY),
     }),
