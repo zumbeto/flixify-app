@@ -231,7 +231,8 @@ const hideSpinner = () => {
 const highlightActiveLink = () => {
   const links = document.querySelectorAll('.main-header__nav__link');
   links.forEach(link => {
-    if (link.getAttribute('href') === state.currentPage) {
+    const linkPath = new URL(link.getAttribute('href'), window.location.origin + window.location.pathname).pathname;
+    if (linkPath === window.location.pathname) {
       link.classList.add('active');
     }
   });
