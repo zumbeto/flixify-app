@@ -7,6 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
+    "start": "live-server --browser=chrome --host=localhost --port=8080 --watch",
     "compile:sass:dev": "sass sass/main.scss dist/css/style.css --style compressed -w",
     "compile:sass:prod": "sass sass/main.scss dist/css/style.css --style compressed",
     "dev": "webpack --config webpack.config.js --env development --watch",
@@ -17,6 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "dotenv-webpack": "^8.0.1",
+    "live-server": "^1.2.2",
     "path-browserify": "^1.0.1",
     "sass": "^1.66.1",
     "webpack": "^5.88.2",
