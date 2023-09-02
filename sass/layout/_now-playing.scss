@@ -1,9 +1,8 @@
-@use "../abstracts" as a;
+@use '../abstracts' as a;
 
 .now-playing {
   padding: 6rem;
-  background: url(../../dist/images/showcase-bg.jpg) no-repeat center
-    center/cover;
+  background: url(../../assets/images/showcase-bg.jpg) no-repeat center center/cover;
 
   &__heading {
     margin: 2rem 0;
