@@ -10,7 +10,12 @@ const devConfig = {
     path: path.resolve(__dirname, 'dist/js'),
   },
   mode: 'development',
-  plugins: [new Dotenv()],
+  plugins: [
+    new Dotenv(),
+    new webpack.DefinePlugin({
+      'process.env.TMDB_API_KEY': JSON.stringify(process.env.TMDB_API_KEY),
+    }),
+  ],
   resolve: {
     fallback: {
       path: require.resolve('path-browserify'),
@@ -25,9 +30,12 @@ const prodConfig = {
     path: path.resolve(__dirname, 'dist/js'),
   },
   mode: 'production',
-  plugins: new webpack.DefinePlugin({
-    'process.env.TMDB_API_KEY': JSON.stringify(process.env.TMDB_API_KEY),
-  }),
+  plugins: [
+    new Dotenv(),
+    new webpack.DefinePlugin({
+      'process.env.TMDB_API_KEY': JSON.stringify(process.env.TMDB_API_KEY),
+    }),
+  ],
   optimization: {
     minimizer: [new TerserPlugin()],
   },

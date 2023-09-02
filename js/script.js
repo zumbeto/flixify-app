@@ -215,6 +215,7 @@ const fetchData = async endpoint => {
   const data = await response.json();
 
   hideSpinner();
+
   return data;
 };
 
