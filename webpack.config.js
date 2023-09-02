@@ -10,6 +10,21 @@ const devConfig = {
   },
   mode: 'development',
   plugins: [new Dotenv()],
+  resolve: {
+    fallback: {
+      path: require.resolve('path-browserify'),
+    },
+  },
+};
+
+const prodConfig = {
+  entry: './js/script.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist/js'),
+  },
+  mode: 'production',
+  plugins: [new Dotenv()],
   optimization: {
     minimizer: [new TerserPlugin()],
   },
@@ -20,4 +35,9 @@ const devConfig = {
   },
 };
 
-module.exports = devConfig;
+module.exports = env => {
+  if (env && env.production) {
+    return prodConfig;
+  }
+  return devConfig;
+};

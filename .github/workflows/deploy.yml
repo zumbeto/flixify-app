@@ -1,0 +1,46 @@
+name: Deploy to gh-pages branch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/.js'
+      - '**/.scss'
+      - '**/.html'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Prepare files for deployment
+        run: |
+          mkdir deployment_dir
+          cp -r dist deployment_dir/
+          cp -r lib deployment_dir/
+          cb -r webfonts deployment_dir/
+          cp *.html deployment_dir/
+          cp README.md deployment_dir/
+          cp LICENSE.md deployment_dir/
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./deployment_dir
+          publish_branch: gh-pages
+          github_token: ${{ secrets.FLIXIFY_TOKEN }}

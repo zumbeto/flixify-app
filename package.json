@@ -7,8 +7,10 @@
     "lib": "lib"
   },
   "scripts": {
-    "compile:sass": "sass sass/main.scss dist/css/style.css --style compressed -w",
-    "build": "webpack --config webpack.config.js --watch"
+    "compile:sass:dev": "sass sass/main.scss dist/css/style.css --style compressed -w",
+    "compile:sass:prod": "sass sass/main.scss dist/css/style.css --style compressed",
+    "dev": "webpack --config webpack.config.js --env development --watch",
+    "build": "npm run compile:sass:prod && webpack --config webpack.config.js --env production"
   },
   "keywords": [],
   "author": "",
