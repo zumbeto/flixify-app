@@ -9,13 +9,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
   }
 
   &__social-links {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     & a {
-      margin-left: 1rem;
+      margin-right: 0.8rem;
       color: #fff;
       transition: all 0.3s ease-in-out;
 

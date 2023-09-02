@@ -26,12 +26,16 @@ section h2 {
 .main-footer {
   &__logo {
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     text-transform: uppercase;
   }
 
   &__social-links {
     font-size: 2rem;
+
+    @include a.breakpoint(sm) {
+      font-size: 3rem;
+    }
   }
 }
