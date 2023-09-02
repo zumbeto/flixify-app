@@ -206,7 +206,7 @@ function initSwiper() {
 
 // Fetch data from API
 const fetchData = async endpoint => {
-  const API_KEY = 'e7607410b1bd82e37d467bc556d312c3';
+  const API_KEY = process.env.TMDB_API_KEY;
   const BASE_URL = 'https://api.themoviedb.org/3/';
 
   showSpinner();

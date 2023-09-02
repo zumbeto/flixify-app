@@ -7,12 +7,17 @@
     "lib": "lib"
   },
   "scripts": {
-    "compile:sass": "sass sass/main.scss dist/css/style.css --style compressed -w"
+    "compile:sass": "sass sass/main.scss dist/css/style.css --style compressed -w",
+    "build": "webpack --config webpack.config.js --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "sass": "^1.66.1"
+    "dotenv-webpack": "^8.0.1",
+    "path-browserify": "^1.0.1",
+    "sass": "^1.66.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
