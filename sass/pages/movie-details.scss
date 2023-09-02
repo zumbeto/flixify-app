@@ -2,15 +2,24 @@
 
 .details-top {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin: 5rem 0 3rem;
 
+  @include a.breakpoint(sm) {
+    flex-direction: row;
+  }
+
   & img {
-    width: 400px;
+    width: 30rem;
     height: 100%;
-    margin-right: 60px;
     object-fit: cover;
+
+    @include a.breakpoint(sm) {
+      width: 40rem;
+      margin-right: 6rem;
+    }
   }
   & p {
     margin: 20px 0;
