@@ -6,7 +6,9 @@ const state = {
 
 // Create movie card
 const createMovieCard = movie => {
-  const imgSrc = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'dist/images/no-image.jpg';
+  const imgSrc = movie.poster_path
+    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+    : 'assets/images/no-image.jpg';
 
   return `
         <div class="card">
@@ -33,7 +35,7 @@ const displayTrendingMovies = async () => {
 
 // Create show card
 const createShowCard = show => {
-  const imgSrc = show.poster_path ? `https://image.tmdb.org/t/p/w500${show.poster_path}` : 'dist/images/no-image.jpg';
+  const imgSrc = show.poster_path ? `https://image.tmdb.org/t/p/w500${show.poster_path}` : 'assets/images/no-image.jpg';
 
   return `
         <div class="card">
@@ -62,7 +64,9 @@ const displayTrendingShows = async () => {
 const displayMovieDetails = async () => {
   const movieId = new URLSearchParams(window.location.search).get('id');
   const movie = await fetchData(`movie/${movieId}`);
-  const imgSrc = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'dist/images/no-image.jpg';
+  const imgSrc = movie.poster_path
+    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+    : 'assets/images/no-image.jpg';
 
   displayBackgroundImg('movie', movie.backdrop_path);
 
@@ -97,7 +101,7 @@ const displayMovieDetails = async () => {
 const displayShowDetails = async () => {
   const showId = new URLSearchParams(window.location.search).get('id');
   const show = await fetchData(`tv/${showId}`);
-  const imgSrc = show.poster_path ? `https://image.tmdb.org/t/p/w500${show.poster_path}` : 'dist/images/no-image.jpg';
+  const imgSrc = show.poster_path ? `https://image.tmdb.org/t/p/w500${show.poster_path}` : 'assets/images/no-image.jpg';
 
   displayBackgroundImg('show', show.backdrop_path);
   console.log(show);
@@ -242,18 +246,23 @@ const router = () => {
   switch (state.currentPage) {
     case '/':
     case '/index.html':
+    case '/index':
       displayTrendingMovies();
       displaySlider();
       break;
+    case '/shows':
     case '/shows.html':
       displayTrendingShows();
       break;
+    case '/movie-details':
     case '/movie-details.html':
       displayMovieDetails();
       break;
+    case '/tv-details':
     case '/tv-details.html':
       displayShowDetails();
       break;
+    case '/search':
     case '/search.html':
       console.log('Search page');
       break;
