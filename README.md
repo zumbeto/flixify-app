@@ -16,7 +16,12 @@ Flixify is a simple web application that I decided to built in order to practice
 
 ## Features
 
-🚧 This section will be updated as features are added 🚧
+- **Swiper API Integration**: The main page includes a slider that uses the Swiper API for a dynamic and responsive display.
+- **FontAwesome Library**: The app integrates the FontAwesome library for the use of icons to enhance the UI.
+- **Search Functionality**: Users can search for their favorite movies and TV shows using the search page.
+- **Trending Content**: The website showcases trending movies and TV shows fetched from the TMDB API.
+
+🚧 This section will be updated as more features are added 🚧
 
 ## Getting Started
 
@@ -36,6 +41,10 @@ npm install
 npm start
 ```
 
+## Live Version
+
+The live version of the website can be accessed on Netlify: [Flixify App on Netlify](https://rainbow-hamster-885697.netlify.app/)
+
 ## Contributing
 
 I welcome contributions! If you find a bug or would like to add a feature, please submit an issue or a pull request.
@@ -43,3 +52,5 @@ I welcome contributions! If you find a bug or would like to add a feature, pleas
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
+
+Enjoy exploring movies and TV shows with Flixify!
