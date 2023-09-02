@@ -1,18 +1,20 @@
 @use '../abstracts' as a;
 
-#main-page {
-  .container {
-    flex-direction: column;
+.container {
+  flex-direction: column;
 
-    @include a.breakpoint(xsm) {
-      flex-direction: row;
-    }
+  @include a.breakpoint(xsm) {
+    flex-direction: row;
   }
 }
 
 .main-header {
-  padding: 2rem 0;
+  padding: 1rem 0;
   background: rgba(0, 0, 0, 0.8);
+
+  @include a.breakpoint(xsm) {
+    padding: 2rem;
+  }
 
   &__logo {
     color: #fff;
@@ -22,8 +24,12 @@
   }
 
   &__nav {
-    display: flex;
-    gap: 1rem;
+    display: none;
+
+    @include a.breakpoint(xxxsm) {
+      display: flex;
+      gap: 1rem;
+    }
 
     & li {
       margin-left: 2rem;

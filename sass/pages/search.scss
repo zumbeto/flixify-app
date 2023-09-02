@@ -18,9 +18,9 @@
   &__form {
     width: 100%;
     max-width: 60rem;
-    min-width: 28rem;
+    min-width: 25rem;
 
-    @include a.breakpoint(xsm) {
+    @include a.breakpoint(xxsm) {
       min-width: 35rem;
     }
 

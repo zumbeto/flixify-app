@@ -1,5 +1,7 @@
-//  480px, 678px, 992px, 1152px, 1520px
+//  352px, 400px, 480px, 678px, 992px, 1152px, 1520px
 $breakpoints: (
+  xxxsm: 22em,
+  xxsm: 25em,
   xsm: 30em,
   sm: 42.375em,
   md: 62em,
@@ -7,9 +9,15 @@ $breakpoints: (
   xl: 95em,
 );
 
-// Mixin for media queries
+// Mixins for media queries
 @mixin breakpoint($size) {
   @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-max($size) {
+  @media (max-width: map-get($breakpoints, $size)) {
     @content;
   }
 }
