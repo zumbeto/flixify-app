@@ -1,4 +1,4 @@
-@use "../abstracts/" as a;
+@use '../abstracts/' as a;
 
 .active {
   color: var(--color-secondary);
@@ -6,17 +6,16 @@
 }
 
 .alert {
-  background: red;
   padding: 1rem 2rem;
   margin-bottom: 2rem;
   border-radius: 0.5rem;
 }
 
-.alert-success {
+.success {
   background: green;
 }
 
-.alert-error {
+.error {
   background: red;
 }
 
