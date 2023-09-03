@@ -1,8 +1,8 @@
-@use "../abstracts" as a;
+@use '../abstracts' as a;
 
 .btn {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   border: 1px solid var(--color-secondary);
   border-radius: 5px;
   color: #fff;
@@ -23,5 +23,22 @@
       background: transparent;
       color: #fff;
     }
+  }
+}
+
+#back-to-top {
+  position: fixed;
+  top: 1rem;
+  right: 50%;
+  transform: translateX(50%);
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 0.5rem;
+  z-index: 1000;
+  visibility: hidden;
+
+  @include a.breakpoint(sm) {
+    display: none;
   }
 }
