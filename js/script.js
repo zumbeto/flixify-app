@@ -1,7 +1,18 @@
 'use strict';
 
-const state = {
+// Global state object
+const globalState = {
   currentPage: window.location.pathname,
+  search: {
+    term: '',
+    type: '',
+    page: 1,
+    totalPages: 1,
+  },
+  api: {
+    apiKey: process.env.TMDB_API_KEY,
+    baseUrl: 'https://api.themoviedb.org/3/',
+  },
 };
 
 // Create movie card
@@ -150,6 +161,31 @@ function displayBackgroundImg(type, path) {
   }
 }
 
+// Search Page Functionality
+if (document.querySelector('.search-btn')) {
+  document.querySelector('.search-btn').addEventListener('click', event => {
+    const searchInput = document.querySelector('#search-term').value;
+
+    if (!searchInput || searchInput.trim() === '') {
+      event.preventDefault();
+      showAlert('Please enter a search term');
+    }
+  });
+}
+
+const search = async () => {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+
+  globalState.search.term = urlParams.get('search-term');
+  globalState.search.type = urlParams.get('type');
+
+  if (globalState.search.term !== null && globalState.search.term !== '') {
+    const results = await searchAPIData();
+    console.log(results);
+  }
+};
+
 // Swiper Slider
 const displaySlider = async () => {
   const { results: movies } = await fetchData('movie/now_playing');
@@ -210,8 +246,8 @@ function initSwiper() {
 
 // Fetch data from API
 const fetchData = async endpoint => {
-  const API_KEY = process.env.TMDB_API_KEY;
-  const BASE_URL = 'https://api.themoviedb.org/3/';
+  const API_KEY = globalState.api.apiKey;
+  const BASE_URL = globalState.api.baseUrl;
 
   showSpinner();
 
@@ -219,6 +255,25 @@ const fetchData = async endpoint => {
   const data = await response.json();
 
   hideSpinner();
+
+  return data;
+};
+
+// Search data from API
+const searchAPIData = async () => {
+  const API_KEY = globalState.api.apiKey;
+  const BASE_URL = globalState.api.baseUrl;
+
+  showSpinner();
+
+  const response = await fetch(
+    `${BASE_URL}search/${globalState.search.type}?api_key=${API_KEY}&language=en-US&query=${globalState.search.term}`
+  );
+
+  const data = await response.json();
+
+  hideSpinner();
+
   return data;
 };
 
@@ -241,9 +296,24 @@ const highlightActiveLink = () => {
   });
 };
 
+// Show Alert Message
+function showAlert(message, className) {
+  const existingAlert = document.querySelector('.alert');
+  if (existingAlert) {
+    existingAlert.remove();
+  }
+
+  const alertElement = document.createElement('div');
+  alertElement.classList.add('alert', className);
+  alertElement.appendChild(document.createTextNode(message));
+  document.querySelector('#alert').appendChild(alertElement);
+
+  setTimeout(() => alertElement.remove(), 2000);
+}
+
 // Page router function
 const router = () => {
-  switch (state.currentPage) {
+  switch (globalState.currentPage) {
     case '/':
     case '/index.html':
     case '/index':
@@ -264,7 +334,7 @@ const router = () => {
       break;
     case '/search':
     case '/search.html':
-      console.log('Search page');
+      search();
       break;
   }
 
